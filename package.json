@@ -1,0 +1,24 @@
+{
+  "name": "inkindex",
+  "version": "1.0.0",
+  "description": "Compare and match the perfect artist to their respective audience",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ddiv739/InkIndex.git"
+  },
+  "author": "Antonio Castro & Dhruv Divekar",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/ddiv739/InkIndex/issues"
+  },
+  "homepage": "https://github.com/ddiv739/InkIndex#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "npm": "^6.0.1",
+    "react": "^16.3.2"
+  }
+}
