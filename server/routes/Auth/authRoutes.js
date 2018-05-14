@@ -1,5 +1,9 @@
 const AuthController = require('./authController');
+const passport = require('passport');
 const router = require('express').Router();
+
+// invoke passport middleware
+const passportSetup = require('../../config/passportSetup');
 
 /* /auth/login */
 router.post('/login', (req, res) => {
@@ -7,12 +11,14 @@ router.post('/login', (req, res) => {
 });
 
 /* /auth/instagram */
-router.post('/instagram', (req, res) => {
-  AuthController.handleInstagramOAuth(req, res);
+router.get('/instagram', passport.authenticate('instagram', { scope: ['basic', 'public_content'] }));
+
+router.get('/instagram/redirect', (req, res) => {
+  AuthController.handleInstagramOAuthRedirect(req, res);
 });
 
 /* /auth/pinterest */
-router.post('/pinterest', (req, res) => {
+router.get('/pinterest', (req, res) => {
   AuthController.handlePinterestOAuth(req, res);
 });
 

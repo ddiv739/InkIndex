@@ -4,7 +4,8 @@ class App extends Component {
   constructor(props) {
     // TODO
     super(props);
-    this.state = {};
+    this.state = {
+    };
   }
 
   render() {
