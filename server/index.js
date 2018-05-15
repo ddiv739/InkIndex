@@ -6,9 +6,8 @@ const path = require('path');
 const AuthRoutes = require('./routes/Auth/authRoutes');
 const RestRoutes = require('./routes/Rest/restRoutes');
 
-const app = express();
-
 const PORT = 3000;
+const app = express();
 
 app.use(express.static(path.join(__dirname, '/../client/dist')));
 
