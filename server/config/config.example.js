@@ -3,10 +3,18 @@
 // ensure that the config.js file created is added to your gitignore.
 
 const config = {
-  instagramClientID: '',
-  instagramClientSecret: '',
-  pinterestClientID: '',
-  pinterestClientSecret: '',
+  instagramOAuth: {
+    instagramClientID: 'FILL_ME_IN',
+    instagramClientSecret: 'FILL_ME_IN',
+  },
+  mongodb: {
+    uri_dev: 'mongodb://localhost/inkindexauth',
+    uri_staging: undefined,
+    uri_prod: undefined,
+  },
+  restdb: {
+
+  },
 };
 
 module.exports = config;

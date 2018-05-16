@@ -5,6 +5,8 @@ const router = require('express').Router();
 // invoke passport middleware
 const passportSetup = require('../../config/passportSetup');
 
+passportSetup.instagramOAuth();
+
 /* /auth/login */
 router.post('/login', (req, res) => {
   AuthController.handleLogin(req, res);
@@ -13,7 +15,7 @@ router.post('/login', (req, res) => {
 /* /auth/instagram */
 router.get('/instagram', passport.authenticate('instagram', { scope: ['basic', 'public_content'] }));
 
-router.get('/instagram/redirect', (req, res) => {
+router.get('/instagram/redirect', passport.authenticate('instagram'), (req, res) => {
   AuthController.handleInstagramOAuthRedirect(req, res);
 });
 

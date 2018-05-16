@@ -5,6 +5,7 @@ const path = require('path');
 
 const AuthRoutes = require('./routes/Auth/authRoutes');
 const RestRoutes = require('./routes/Rest/restRoutes');
+const authDb = require('./db/Auth/init');
 
 const PORT = 3000;
 const app = express();
