@@ -20,7 +20,8 @@ const AuthController = {
   },
 
   handleLogout: (req, res) => {
-    res.send({ message: 'invoked handleLogout' });
+    req.logout();
+    res.redirect('/');
   },
 };
 

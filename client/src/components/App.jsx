@@ -11,7 +11,7 @@ class App extends Component {
     };
   }
 
-  componentWillMount() {
+  componentDidMount() {
     apiCaller.checkLogin().then(({ data }) => {
       if (data) {
         this.setState({
@@ -28,7 +28,8 @@ class App extends Component {
         <h1>Ink Index</h1>
         {this.state.isLoggedIn ? <p>You are logged in as <em>{this.state.userInfo.username}</em></p>
         : null}
-        <a href="/auth/instagram"><button>Log in using Instagram</button></a>
+        {this.state.isLoggedIn ? <a href="/auth/logout"><button>Log out</button></a>
+        : <a href="/auth/instagram"><button>Log in using Instagram</button></a>}
       </div>
     );
   }
