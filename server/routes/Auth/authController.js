@@ -3,8 +3,12 @@ const AuthController = {
     res.send({ message: 'invoked handleLogin' });
   },
 
+  checkLogin: (req, res) => {
+    res.send(req.user);
+  },
+
   handleInstagramOAuthRedirect: (req, res) => {
-    res.send({ message: 'invoked handleInstagramOAuthRedirect' });
+    res.redirect(301, '/');
   },
 
   handlePinterestOAuth: (req, res) => {

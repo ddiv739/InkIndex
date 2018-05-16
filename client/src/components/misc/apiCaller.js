@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const apiCaller = {
-  instagramOAuthCaller: callback => axios.get('/auth/instagram').then(data => callback(data)),
+  checkLogin: () => axios.get('/auth/check'),
 };
 
 export default apiCaller;

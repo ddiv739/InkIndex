@@ -12,6 +12,10 @@ router.post('/login', (req, res) => {
   AuthController.handleLogin(req, res);
 });
 
+router.get('/check', (req, res) => {
+  AuthController.checkLogin(req, res);
+});
+
 /* /auth/instagram */
 router.get('/instagram', passport.authenticate('instagram', { scope: ['basic', 'public_content'] }));
 
